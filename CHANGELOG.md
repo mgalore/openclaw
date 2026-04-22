@@ -19,6 +19,7 @@ Docs: https://docs.openclaw.ai
 - Plugins/discovery: reject package plugin source entries that escape the package directory before explicit runtime entries or inferred built JavaScript peers can be used. (#69868) thanks @gumadeiras.
 - CLI/channels: resolve channel presence through a shared policy that keeps ambient env vars and stale persisted auth from surfacing disabled bundled plugins in status, doctor, security audit, and cron delivery validation unless the channel or plugin is effectively enabled or explicitly configured. (#69862) Thanks @gumadeiras.
 - Control UI/config: preserve intentionally empty raw config snapshots when clearing pending updates so reset restores the original bytes instead of synthesizing JSON for blank config files. (#68178) Thanks @BunsDev.
+- Doctor/channels: keep configured-channel doctor hooks running when read-only or setup discovery finds a plugin without a doctor adapter, preserving runtime-only bundled doctor fallbacks for compatibility repair and allowlist warnings. (#69919) Thanks @gumadeiras.
 
 ### Fixes
 
